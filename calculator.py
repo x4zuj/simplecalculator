@@ -1,5 +1,5 @@
 
-# Hello and welcome to my project : calculator. This simple calculator was made by 4zuj
+# Hello and welcome to my project : simplecalculator. This simple calculator was made by 4zuj
 # At the start a friendly greeting, because why not right?
 
 print("Welcome to the calculator!")
@@ -30,7 +30,7 @@ if op == "/":
         print("Error")
     if b == 0:
         print("Error")
-        else:
+    else:
         print("Your result is : ",a/b)
 
 # A little exit function because I like things to be fancy.
