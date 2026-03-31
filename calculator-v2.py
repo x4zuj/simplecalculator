@@ -1,35 +1,38 @@
-while True: # we keep it running cause you might want to calculate more often
-    print("Hey :)! Wanna calculate two numbers?")
-    
-    def begin_calc(): # function cause its more elegant, returns result string
-        try:
-            a = float(input("First number to calculate: ")) 
-            b = float(input("Second number to calculate: "))
-            # float otherwise cant calc decimals + converts to int
-            
-            # request operator
-            print("Great! Would you like to use any of the following operators?")
-            op = input("[+, -, *, /]: ")
-            
-            # same logic begins
-            if op == "+":
-                result = a + b # result variable instead of print statements everywhere
-            elif op == "-":
-                result = a - b
-            elif op == "*":
-                result = a * b
-            elif op == "/":
-                if b == 0: # this prevents having 2 error messages
-                    return "Division by 0 is not allowed >:(" 
-                    #       ^ we get angry and return this string instead
-                result = a / b
-            else:
-                return "That isn't an operator >:(" # we get angry again
-            
-            return f"Your result is: {result} :D" # happy :)
+
+# Hello and welcome! This is a continued version of my old calculator. calculator_reworked! Made by 4zuj.
+# At the start a friendly greeting, because why not right?
+
+print("\nWelcome to the calculator!\n")
+
+# Here is the code asking for the Numbers that should be used to calculate.
+
+def addition(first_calculating_number, second_calculating_number):
+    print("Your result is:\n> ",first_calculating_number+second_calculating_number,"\n")
+
+def subtraction(first_calculating_number, second_calculating_number):
+    print("Your result is:\n> ",first_calculating_number-second_calculating_number,"\n")
+
+def multiplication(first_calculating_number, second_calculating_number):
+    print("Your result is:\n> ",first_calculating_number*second_calculating_number,"\n")
+
+def division(first_calculating_number, second_calculating_number):
+    print("Your result is:\n> ",first_calculating_number/second_calculating_number,"\n")
+
+while True:
+    first_number = float(input("First Number to calculate?: "))
+    second_number = float(input("Second Number to use for the other Number?: "))
+
+    print("\nGreat! What Operator do you want to use to calculate? The available operators are : +, -, *, /") # Now the code is going to ask the user what Operator he wants to use.
+    operator = input("> ")
+
+    if operator == "+":
+        addition(first_calculating_number = first_number, second_calculating_number = second_number)
+
+    elif operator == "-":
+        subtraction(first_calculating_number = first_number, second_calculating_number = second_number)
         
-        except ValueError: # if python ValueError:
-            return "Enter actual numbers >:(" # and angry again
-    
-    print(begin_calc()) # because function returns result string, print
-    input("Press any key to restart. CTRL+C to terminate.") # cosmetic
+    elif operator == "*":
+        multiplication(first_calculating_number = first_number, second_calculating_number = second_number)
+
+    elif operator == "/":
+        division(first_calculating_number = first_number, second_calculating_number = second_number)
